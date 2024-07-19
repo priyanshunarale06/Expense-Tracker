@@ -1,0 +1,59 @@
+
+/*  */
+#side_menu{
+    height:623px;
+    background-color:white;
+}
+#side_menu ul{
+    list-style-type:none;
+    margin-left:-40px;
+}
+#side_menu a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+#side_menu a:hover{
+    color:white;
+}
+#side_menu li{
+    margin:10px;
+    padding:9px;
+    font-size:15px;
+    border-radius:10px;
+}
+#side_menu li:hover{
+    background-color:rgb(0, 167, 233);
+}
+#side_menu .about li:hover{
+    background-color:rgb(255, 255, 255);
+}
+
+/*  */
+#page_title{
+    height:30px;
+    background-color:rgb(247, 246, 214);
+}
+#page_title_big{
+    height:100px;
+    background-color:rgb(194, 205, 255);
+}
+
+/*   */
+#full_view{
+    height: 623px;
+    height: auto;
+    background-color:rgb(194, 205, 255);
+}
+#full_view .card{
+    width:90%;
+    height:190px;
+}
+#full_view .cb-text{
+    font-size:70px;
+}
+
+/*  */
+.expenses label,input,button{
+    margin-left:90px;
+}

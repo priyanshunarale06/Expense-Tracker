@@ -1,0 +1,42 @@
+<%-include('header.ejs')%>
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col-12" id="page_title"><h6 class="mt-1"> / Manage Expenses</h6></div>
+
+        <div class="col-12" id="page_title_big"><h1 class="mt-3">Manage Expenses</h1></div>
+        
+        <div class="col-1" ></div>
+
+        <div class="col-10" >
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Cost</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <%for (var i=0;i<exp.length;i++) { %>
+                <tr>
+                    <td width="70px"><%=i+1%></td>
+                    <td><%=exp[i].date %></td>
+                    <td><%=exp[i].exp_item%></td>
+                    <td><%=exp[i].exp_cost%></td>
+                    <td width="70px">
+                        <a href="/edit_exp/<%=exp[i].exp_id%>">
+                            <button class="btn btn-primary p-1 m-2">✏️</button>
+                        </a>
+                    </td>
+                    <td width="70px">
+                        <a href="/delete_exp/<%=exp[i].exp_id%>">
+                            <button class="btn btn-danger p-1 m-2">🗑️</button>
+                        </a>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+<%-include('footer.ejs')%>

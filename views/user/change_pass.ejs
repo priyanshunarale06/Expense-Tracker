@@ -1,0 +1,58 @@
+<%-include('header.ejs')%>
+<div class="container-fluid p-0 expenses">
+    <div class="row">
+        <div class="col-12" id="page_title"><h6 class="mt-1"> / Change Password</h6></div>
+
+        <div class="col-12" id="page_title_big"><h1 class="mt-3">Change Password</h1></div>
+
+        <div class="col-12">
+            <form action="/update_pass" method="post" onsubmit="return check_pass()" name="changepassword">
+
+                <label>Current Pass</label>
+                <div class="col-12">
+                    <input type="text" value="<%=user[0].user_pass%>" name="original_password" class="w-75 p-2" disabled hidden>
+                </div>
+
+                <div class="col-12">
+                    <input type="text" name="entered_password" class="w-75 p-2" required>
+                </div>
+
+                <label class="mt-3">New Pass</label>
+                <div class="col-12">
+                    <input type="text" name="n_password" class="w-75 p-2" required>
+                </div>
+
+                <label class="mt-3">Confirm Pass</label>
+                <div class="col-12">
+                    <input type="text" name="confirm_password" class="w-75 p-2" required>
+                </div>
+
+                
+                <button class="btn btn-primary mt-4">Change Password</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function check_pass()
+    {
+        if(document.changepassword.n_password.value != document.changepassword.confirm_password.value)
+	    {
+		    alert('New Password and Confirm Password field does not match');
+		    document.changepassword.confirm_password.focus();
+            return false;
+	    }
+        else if(document.changepassword.original_password.value != document.changepassword.entered_password.value){
+            alert('Original Password and Entered Password field does not match');
+		    document.changepassword.original_password.focus();
+            return false;
+        }
+        else{
+            alert('Password Change Successfully');
+        }
+        return true;
+    }
+</script>
+
+<%-include('footer.ejs')%>

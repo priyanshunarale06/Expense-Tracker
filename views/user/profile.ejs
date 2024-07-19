@@ -1,0 +1,30 @@
+<%-include('header.ejs')%>
+<div class="container-fluid p-0 expenses">
+    <div class="row">
+        <div class="col-12" id="page_title"><h6 class="mt-1">/ Profile</h6></div>
+
+        <div class="col-12" id="page_title_big"><h1 class="mt-3">Profile</h1></div>
+
+        <div class="col-12">
+          <form action="/update_profile" method="post">
+            <label>User Name</label>
+            <div class="col-12">
+                <input type="text" value="<%=pro[0].user_name%>" name="user_name" class="w-75 p-2" required>
+            </div>
+
+            <label class="mt-4">User Email</label>
+            <div class="col-12">
+                <input type="text"  value="<%=pro[0].user_mail%>" class="w-75 p-2" disabled>
+            </div>
+
+            <label class="mt-4">User Mobile</label>
+            <div class="col-12">
+                <input type="number"  value="<%=pro[0].user_mob%>" name="user_mob" class="w-75 p-2" required>
+            </div>
+
+            <button class="btn btn-primary mt-4">Update</button>
+          </form>
+        </div>
+    </div>
+</div>
+<%-include('footer.ejs')%>
